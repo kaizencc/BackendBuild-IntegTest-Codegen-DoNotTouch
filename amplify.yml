@@ -1,6 +1,11 @@
 version: 1
 backend:
   phases:
+    preBuild:
+      commands:
+        - nvm install 22
+        - nvm use 22
+        - npm install @aws-amplify/cli@14.2.0-rc.a1438c586b30f26.0
     build:
       commands:
         - amplifyPush --simple
